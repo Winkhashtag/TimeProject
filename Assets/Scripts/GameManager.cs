@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
     public Node currentNode;
 
     public static GameManager ins;
+
+    public CameraRig rig;
     //bad singleton
     void Awake()
     {
