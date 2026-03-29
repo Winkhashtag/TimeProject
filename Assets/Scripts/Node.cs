@@ -18,18 +18,43 @@ public abstract class Node : MonoBehaviour
     void OnMouseDown()
     {
         Debug.Log("Clicked: " + gameObject.name);
+        Arrive();
+    }
+  
+    public void Arrive()
+    {
+        //leave existing current node
+        if (GameManager.ins.currentNode != null)
+        {
+            GameManager.ins.currentNode.Leave();
+        }
+
+        //set current node
+        GameManager.ins.currentNode = this;
+        //move the camera
         Camera.main.transform.position = cameraPosition.position;
         Camera.main.transform.rotation = cameraPosition.rotation;
-    }
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
+        //turn off our own collider
+        if (col != null)
+            col.enabled = false;
+        //turn on all reachable node's colliders
+        foreach (Node node in reachableNodes)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit))
-                Debug.Log("Hit: " + hit.collider.gameObject.name);
-            else
-                Debug.Log("Raycast hit nothing");
+            if (node.col!= null)
+            {
+                node.col.enabled = true;
+            }
+        }
+    }
+    public void Leave()
+    {
+        //turn off all reachable node's colliders
+        foreach (Node node in reachableNodes)
+        {
+            if (node.col != null)
+            {
+                node.col.enabled = false;
+            }
         }
     }
 }
