@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public Node currentNode;
 
     public static GameManager ins;
+    public Node startingNode;
 
     public CameraRig rig;
     //bad singleton
@@ -14,6 +15,10 @@ public class GameManager : MonoBehaviour
         ins = this;
     }
 
+    private void Start()
+    {
+startingNode.Arrive();
+    }
     void Update()
     {
         if (Input.GetMouseButtonDown(1) && currentNode.GetComponent<Prop>() != null)

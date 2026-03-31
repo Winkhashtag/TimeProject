@@ -11,9 +11,10 @@ public abstract class Node : MonoBehaviour
     [HideInInspector]
     public Collider col;
 
-    private void Start()
+    private void Awake()
     {
         col = GetComponent<Collider>();
+        col.enabled = false;
     }
 
     void OnMouseDown()
