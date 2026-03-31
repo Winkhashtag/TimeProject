@@ -1,11 +1,16 @@
 using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager ins;
+    public Canvas ivCanvas;
+
     [HideInInspector]
     public Node currentNode;
 
-    public static GameManager ins;
+   
     public Node startingNode;
 
     public CameraRig rig;
@@ -13,6 +18,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         ins = this;
+        ivCanvas.gameObject.SetActive(false);
     }
 
     private void Start()

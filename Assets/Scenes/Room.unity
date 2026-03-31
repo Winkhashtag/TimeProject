@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9eb18557643b047add5626f8730e1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  ivCanvas: {fileID: 1805116846}
   currentNode: {fileID: 0}
   startingNode: {fileID: 1613214297}
   rig: {fileID: 1550082333}
@@ -2100,6 +2101,7 @@ GameObject:
   - component: {fileID: 1745799516}
   - component: {fileID: 1745799517}
   - component: {fileID: 1745799518}
+  - component: {fileID: 1745799519}
   m_Layer: 0
   m_Name: Red Sphere
   m_TagString: Untagged
@@ -2162,6 +2164,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.275
   m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!114 &1745799519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745799515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0333be3a5a6c3c41a4b3c923dfc8e17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImageViewer
 --- !u!1 &1804243092
 GameObject:
   m_ObjectHideFlags: 0

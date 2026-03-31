@@ -1,16 +1,10 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class IVCanvas : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+  public void Activate()
 
-    // Update is called once per frame
-    void Update()
     {
-        
-    }
+        gameObject.SetActive(true);
+    }   
 }

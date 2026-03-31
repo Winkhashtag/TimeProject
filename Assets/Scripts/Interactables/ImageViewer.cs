@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class ImageViewer : MonoBehaviour
+public class ImageViewer : Interactable
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Interact()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        GameManager.ins.ivCanvas.Activate();
+    }   
 }
