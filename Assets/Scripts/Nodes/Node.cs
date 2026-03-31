@@ -23,7 +23,7 @@ public abstract class Node : MonoBehaviour
         Arrive();
     }
   
-    public void Arrive()
+    public virtual void Arrive()
     {
         //leave existing current node
         if (GameManager.ins.currentNode != null)
@@ -50,7 +50,7 @@ public abstract class Node : MonoBehaviour
             }
         }
     }
-    public void Leave()
+    public virtual void Leave()
     {
         //turn off all reachable node's colliders
         foreach (Node node in reachableNodes)
