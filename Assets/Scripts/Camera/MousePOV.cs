@@ -25,9 +25,16 @@ public class MousePOV : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0))
         {
+            if (GameManager.ins.ivCanvas.gameObject.activeInHierarchy)
+            {
+                return;
+
+            }
+
             yAxis = rig.y_axis.localRotation;
-            xAxis = rig.x_axis.localRotation;
-            LookRotation();
+                xAxis = rig.x_axis.localRotation;
+                LookRotation();
+            
         }
     }
     public void LookRotation()

@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9eb18557643b047add5626f8730e1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  ivCanvas: {fileID: 1805116846}
+  ivCanvas: {fileID: 1805116848}
   currentNode: {fileID: 0}
   startingNode: {fileID: 1613214297}
   rig: {fileID: 1550082333}
@@ -2176,6 +2176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0333be3a5a6c3c41a4b3c923dfc8e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ImageViewer
+  pic: {fileID: -1847996574, guid: c40c1e8f301f9b04aad196f5cecfdaf6, type: 3}
 --- !u!1 &1804243092
 GameObject:
   m_ObjectHideFlags: 0
@@ -2301,6 +2302,7 @@ GameObject:
   - component: {fileID: 1805116846}
   - component: {fileID: 1805116845}
   - component: {fileID: 1805116844}
+  - component: {fileID: 1805116848}
   m_Layer: 5
   m_Name: IVCanvas
   m_TagString: Untagged
@@ -2392,6 +2394,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1805116848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805116843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c160cb1cb4757458f4c4195b3a3c89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IVCanvas
+  imageHolder: {fileID: 745097401}
 --- !u!1 &1805868056
 GameObject:
   m_ObjectHideFlags: 0

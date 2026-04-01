@@ -48,16 +48,22 @@ public abstract class Node : MonoBehaviour
             {
                 node.col.enabled = true;
             }
+            SetReachableNodes(true);
         }
     }
     public virtual void Leave()
+    {
+        SetReachableNodes(false);
+    }
+
+    public void SetReachableNodes(bool set)
     {
         //turn off all reachable node's colliders
         foreach (Node node in reachableNodes)
         {
             if (node.col != null)
             {
-                node.col.enabled = false;
+                node.col.enabled = set;
             }
         }
     }

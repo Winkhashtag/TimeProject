@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager ins;
-    public Canvas ivCanvas;
+    public IVCanvas ivCanvas;
 
     [HideInInspector]
     public Node currentNode;
@@ -29,6 +29,11 @@ startingNode.Arrive();
     {
         if (Input.GetMouseButtonDown(1) && currentNode.GetComponent<Prop>() != null)
         {
+            if (ivCanvas.gameObject.activeInHierarchy)
+            {
+                ivCanvas.Close();
+                return;
+            }
             currentNode.GetComponent<Prop>().loc.Arrive();
         }
     }
