@@ -42,14 +42,9 @@ public abstract class Node : MonoBehaviour
         if (col != null)
             col.enabled = false;
         //turn on all reachable node's colliders
-        foreach (Node node in reachableNodes)
-        {
-            if (node.col!= null)
-            {
-                node.col.enabled = true;
-            }
+       
             SetReachableNodes(true);
-        }
+        
     }
     public virtual void Leave()
     {
@@ -63,7 +58,17 @@ public abstract class Node : MonoBehaviour
         {
             if (node.col != null)
             {
-                node.col.enabled = set;
+                if (node.GetComponent<Prerequisite>() && node.GetComponent<Prerequisite>().nodeAccess)
+                {
+                    if (node.GetComponent<Prerequisite>().Complete)
+                    {
+                        node.col.enabled = set;
+                    }
+                }
+                else
+                {
+                    node.col.enabled = set;
+                }
             }
         }
     }

@@ -1286,15 +1286,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4401800589758182303, guid: 99c2eac461bca314c888a8da27ca889c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.6573229
+      value: -1.07
       objectReference: {fileID: 0}
     - target: {fileID: 4401800589758182303, guid: 99c2eac461bca314c888a8da27ca889c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.47971618
+      value: 0.623
       objectReference: {fileID: 0}
     - target: {fileID: 4401800589758182303, guid: 99c2eac461bca314c888a8da27ca889c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.34184933
+      value: 0.475
       objectReference: {fileID: 0}
     - target: {fileID: 4401800589758182303, guid: 99c2eac461bca314c888a8da27ca889c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1551,7 +1551,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057617163}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4fe1517c8f885a42b2d40a35d7e2f9e, type: 3}
   m_Name: 
@@ -1569,6 +1569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Prerequisite
   watchSwitcher: {fileID: 983947000}
+  nodeAccess: 0
 --- !u!1 &1073123909
 GameObject:
   m_ObjectHideFlags: 0
@@ -2419,6 +2420,8 @@ GameObject:
   - component: {fileID: 1745799517}
   - component: {fileID: 1745799518}
   - component: {fileID: 1745799519}
+  - component: {fileID: 1745799521}
+  - component: {fileID: 1745799520}
   m_Layer: 0
   m_Name: Red Sphere
   m_TagString: Untagged
@@ -2494,6 +2497,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ImageViewer
   pic: {fileID: -1847996574, guid: c40c1e8f301f9b04aad196f5cecfdaf6, type: 3}
+--- !u!114 &1745799520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745799515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac2bc679809e3ef449a51cd561e573dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Prerequisite
+  watchSwitcher: {fileID: 983947000}
+  nodeAccess: 1
+--- !u!114 &1745799521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745799515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fe1517c8f885a42b2d40a35d7e2f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Observer
 --- !u!1 &1804243092
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,10 +25,12 @@ public class Prop : Node
         if (inter != null)
         {
             if (GetComponent<Prerequisite>() && GetComponent<Prerequisite>().Complete)
-            col.enabled = true;
+            { return; }
+                col.enabled = true;
 
 
-            inter.enabled = true;
+                inter.enabled = true;
+            
         }
     }
 
