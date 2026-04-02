@@ -16,13 +16,14 @@ public class DayManager : MonoBehaviour
     {
         currentDay++;
 
+        FindObjectsByType<CalendarMesh>(FindObjectsSortMode.None)[0].UpdateTexture();
+
         if (currentDay >= endingDay)
         {
             TriggerEnding();
             return;
         }
     }
-
     void TriggerEnding()
     {
         Debug.Log("Game Over");
