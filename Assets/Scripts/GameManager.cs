@@ -43,6 +43,11 @@ startingNode.Arrive();
                 obsCamera.Close();
                 return;
             }
+            if (calendarCanvas.gameObject.activeInHierarchy)
+            {
+                calendarCanvas.Close();
+                return;
+            }
             currentNode.GetComponent<Prop>().loc.Arrive();
         }
     }
