@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager ins;
     public IVCanvas ivCanvas;
     public ObsCamera obsCamera;
+    public CalendarCanvas calendarCanvas;
 
     [HideInInspector]
     public Node currentNode;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
         ins = this;
         ivCanvas.gameObject.SetActive(false);
         obsCamera.gameObject.SetActive(false);
+        calendarCanvas.gameObject.SetActive(false);
     }
 
     private void Start()

@@ -2,15 +2,29 @@ using UnityEngine;
 
 public class DayManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static DayManager ins;
+    public int currentDay = 1;
+    public int endingDay = 10;
+    public Texture[] calendarTextures;
+
+    void Awake()
     {
-        
+        ins = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CompleteDay()
     {
-        
+        currentDay++;
+
+        if (currentDay >= endingDay)
+        {
+            TriggerEnding();
+            return;
+        }
+    }
+
+    void TriggerEnding()
+    {
+        Debug.Log("Game Over");
     }
 }
