@@ -1551,7 +1551,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057617163}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4fe1517c8f885a42b2d40a35d7e2f9e, type: 3}
   m_Name: 
@@ -1569,7 +1569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Prerequisite
   watchSwitcher: {fileID: 983947000}
-  nodeAccess: 0
+  nodeAccess: 1
 --- !u!1 &1073123909
 GameObject:
   m_ObjectHideFlags: 0

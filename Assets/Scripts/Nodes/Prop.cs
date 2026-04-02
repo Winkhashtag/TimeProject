@@ -24,8 +24,10 @@ public class Prop : Node
         //make this object interactable if prerequisite is met
         if (inter != null)
         {
-            if (GetComponent<Prerequisite>() && GetComponent<Prerequisite>().Complete)
-            { return; }
+            if (GetComponent<Prerequisite>() != null && !GetComponent<Prerequisite>().Complete)
+            { 
+                return;
+            }
                 col.enabled = true;
 
 
