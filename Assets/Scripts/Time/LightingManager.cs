@@ -8,6 +8,7 @@ public class LightingManager : MonoBehaviour
     [SerializeField] private Light directionalLight;
     [SerializeField] private LightingPreset preset;
     [SerializeField] private float dayDuration = 120f; //duration in seconds
+    private int lastDay = 0;
 
     //variables
     [SerializeField, Range(0,24)] private float timeOfDay;
@@ -21,6 +22,17 @@ public class LightingManager : MonoBehaviour
         {
             timeOfDay += Time.deltaTime /dayDuration * 24;
             timeOfDay %= 24;
+
+            //convert to int day number
+            int currentDayNumber = Mathf.FloorToInt(timeOfDay);
+
+            //if we crossed 23 to 0, trigger DayManager
+            if (currentDayNumber < lastDay)
+            {
+                DayManager.ins.CompleteDay();
+            }
+            lastDay = currentDayNumber;
+
             UpdateLighting(timeOfDay / 24f);
         }
         else

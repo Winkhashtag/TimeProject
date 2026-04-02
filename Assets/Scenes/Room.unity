@@ -587,16 +587,16 @@ MonoBehaviour:
   currentDay: 1
   endingDay: 10
   calendarTextures:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2800000, guid: b9bbcf41724e1e845aa0cec398a7f96c, type: 3}
+  - {fileID: 2800000, guid: fc38a4c85bcd93a4580daf4e506b29a4, type: 3}
+  - {fileID: 2800000, guid: b40563aa2fbe06b4899d9c9d3f861c42, type: 3}
+  - {fileID: 2800000, guid: cdb313452e525104993f5f0d48b33c1b, type: 3}
+  - {fileID: 2800000, guid: 70fd3f82b4e60ce4db8fa887cd464960, type: 3}
+  - {fileID: 2800000, guid: 47f122d6602382547b95a1cec744d1cc, type: 3}
+  - {fileID: 2800000, guid: 069bc254d7d801f4680b708cbd79fe62, type: 3}
+  - {fileID: 2800000, guid: e0c8b9060c03e6042a42c3f8178450ba, type: 3}
+  - {fileID: 2800000, guid: 157e84ce41afd2e418027ead24a6247f, type: 3}
+  - {fileID: 2800000, guid: 131010c57e2b37e4d9d561092cf3cd87, type: 3}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -3425,7 +3425,7 @@ GameObject:
   - component: {fileID: 1949345786}
   - component: {fileID: 1949345785}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Shade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
