@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager ins;
     public IVCanvas ivCanvas;
+    public ObsCamera obsCamera;
 
     [HideInInspector]
     public Node currentNode;
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     {
         ins = this;
         ivCanvas.gameObject.SetActive(false);
+        obsCamera.gameObject.SetActive(false);
     }
 
     private void Start()
@@ -32,6 +34,11 @@ startingNode.Arrive();
             if (ivCanvas.gameObject.activeInHierarchy)
             {
                 ivCanvas.Close();
+                return;
+            }
+            if (obsCamera.gameObject.activeInHierarchy)
+            {
+                obsCamera.Close();
                 return;
             }
             currentNode.GetComponent<Prop>().loc.Arrive();
