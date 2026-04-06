@@ -48,7 +48,7 @@ public class StatReplenisher : Interactable
 
     void CompleteReplenish()
     {
-        PlayerStats.ins().ReplenishStat(statName, repenishAmount);
+        PlayerStats.ins.ReplenishStat(statName, repenishAmount);
         holdTimer = 0f;
         holdFillImage.fillAmount = 0f;
         isActive = false;
