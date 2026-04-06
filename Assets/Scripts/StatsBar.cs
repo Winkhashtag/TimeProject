@@ -1,15 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class StatsBar : MonoBehaviour
 {
     [SerializeField] private Image statsBarFill;
-    [SerializeField] private Text statsBarText;
+    [SerializeField] private TMP_Text statsBarText;
 
-    private void Start()
-    {
-        UpdateStatsBar(50f, 100f,"Hunger");
-    }
+  
 
     public void UpdateStatsBar(float current, float maximum, string statsName)
     {
