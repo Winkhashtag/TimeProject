@@ -13,6 +13,6 @@ public class StatsBar : MonoBehaviour
     {
         statsBarFill.fillAmount = current / maximum;
 
-        statsBarText.text = statsName + ": " + current + "/" + maximum;
+        statsBarText.text = statsName + ": " + Mathf.RoundToInt(current) + "/" + Mathf.RoundToInt(maximum);
     }
 }
