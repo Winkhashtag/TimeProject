@@ -35,7 +35,7 @@ startingNode.Arrive();
         if (currentNode == null)
             return;
 
-        if (Input.GetMouseButtonDown(1) && currentNode.GetComponent<Prop>() != null)
+        if (Input.GetMouseButtonDown(1))
         {
             if (ivCanvas.gameObject.activeInHierarchy)
             {
@@ -52,19 +52,18 @@ startingNode.Arrive();
                 calendarCanvas.Close();
                 return;
             }
-            currentNode.GetComponent<Prop>().loc.Arrive();
-        }
 
-        StatReplenisher replenisher = currentNode.GetComponent<StatReplenisher>();
-        if (replenisher != null && replenisher.isActive)
-        {
-            replenisher.Close();
-            return;
-        }
+            StatReplenisher replenisher = currentNode.GetComponent<StatReplenisher>();
+            if (replenisher != null && replenisher.isActive)
+            {
+                replenisher.Close();
+                return;
+            }
 
-        if (currentNode.GetComponent<Prop>() != null)
-        {
-            currentNode.GetComponent<Prop>().loc.Arrive();
+            if (currentNode.GetComponent<Prop>() != null && currentNode.GetComponent<Prop>().loc != null)
+            {
+                currentNode.GetComponent<Prop>().loc.Arrive();
+            }
         }
     }
 }

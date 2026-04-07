@@ -25,7 +25,9 @@ public class MousePOV : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0))
         {
-            if (GameManager.ins.ivCanvas.gameObject.activeInHierarchy || GameManager.ins.obsCamera.gameObject.activeInHierarchy || GameManager.ins.calendarCanvas.gameObject.activeInHierarchy)
+            StatReplenisher replenisher = GameManager.ins.currentNode != null ? GameManager.ins.currentNode.GetComponent<StatReplenisher>() : null;
+
+            if (GameManager.ins.ivCanvas.gameObject.activeInHierarchy || GameManager.ins.obsCamera.gameObject.activeInHierarchy || GameManager.ins.calendarCanvas.gameObject.activeInHierarchy || (replenisher != null && replenisher.isActive))
             {
                 return;
 
