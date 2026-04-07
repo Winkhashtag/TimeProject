@@ -20,12 +20,9 @@ public class DayManager : MonoBehaviour
 
         if (currentDay >= endingDay)
         {
-            TriggerEnding();
+            GalleryCanvas.ins.ShowGallery();
             return;
         }
     }
-    void TriggerEnding()
-    {
-        Debug.Log("Game Over");
-    }
+ 
 }
