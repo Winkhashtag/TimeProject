@@ -14,7 +14,7 @@ public class StatReplenisher : Interactable
 
     private float holdTimer = 0f;
     private bool isHolding = false;
-    private bool isActive = false;
+    public bool isActive = false;
 
     public override void Interact()
     {
@@ -55,4 +55,14 @@ public class StatReplenisher : Interactable
         buttonIcon.SetActive(false);
         this.enabled = false;
     }
+    public void Close()
+    {
+        isActive = false;
+        isHolding = false;
+        holdTimer = 0f;
+        holdFillImage.fillAmount = 0f;
+        buttonIcon.SetActive(false);
+        this.enabled = false;
+    }
+
 }

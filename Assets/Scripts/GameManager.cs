@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -31,6 +32,9 @@ startingNode.Arrive();
     }
     void Update()
     {
+        if (currentNode == null)
+            return;
+
         if (Input.GetMouseButtonDown(1) && currentNode.GetComponent<Prop>() != null)
         {
             if (ivCanvas.gameObject.activeInHierarchy)
@@ -48,6 +52,18 @@ startingNode.Arrive();
                 calendarCanvas.Close();
                 return;
             }
+            currentNode.GetComponent<Prop>().loc.Arrive();
+        }
+
+        StatReplenisher replenisher = currentNode.GetComponent<StatReplenisher>();
+        if (replenisher != null && replenisher.isActive)
+        {
+            replenisher.Close();
+            return;
+        }
+
+        if (currentNode.GetComponent<Prop>() != null)
+        {
             currentNode.GetComponent<Prop>().loc.Arrive();
         }
     }
