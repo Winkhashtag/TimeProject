@@ -3,7 +3,12 @@ guid: 79b58f7efa12a7341afd244be4e0edda
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Round Rugs
+    second: {fileID: 2100000, guid: e1657deaf2d7f8149beee32e434a66a5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
