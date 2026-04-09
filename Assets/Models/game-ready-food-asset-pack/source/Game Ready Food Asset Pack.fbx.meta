@@ -3,7 +3,77 @@ guid: b4beca84ef1b8284cb6de2202b0a494e
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bowl of Cereal PBR
+    second: {fileID: 2100000, guid: 57a042e571b3c7e4c8b2bdccc240a686, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bread PBR.001
+    second: {fileID: 2100000, guid: 156bc50f376c4ea4e8eb221af0d13d75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cake PBR
+    second: {fileID: 2100000, guid: f87d842a4c01afb4e80847e4602b385a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cheese Wedge PBR
+    second: {fileID: 2100000, guid: 7e5ce91cdb1882343b5219b0f86fef43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chocolate Brioche PBR
+    second: {fileID: 2100000, guid: 4501657a76ca9dd468017893d4ebecda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Decorative Gourd PBR
+    second: {fileID: 2100000, guid: b7c8dfa1d3a5c1248a2a7d6c9eca9768, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Half Cheese Wheel PBR
+    second: {fileID: 2100000, guid: 5332a585fd54a884a8618fdc8949ef10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mandarin PBR
+    second: {fileID: 2100000, guid: 478b8d44e6b7fae4ba210e8a92e2a05d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Potato PBR
+    second: {fileID: 2100000, guid: 7416085451047a74cbdfe49e430783cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red Pepper PBR
+    second: {fileID: 2100000, guid: 13a1847a7440d9d409e68cedbc7a7a0a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Russet Potato PBR
+    second: {fileID: 2100000, guid: a1a960ef8090daa4e8d59a8788f058fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spice Cupcake PBR
+    second: {fileID: 2100000, guid: 194af6befcb28ff408cac741c017f5fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub Sandwich PBR
+    second: {fileID: 2100000, guid: 7b94aa191c172e94b9aa1b0ff2a977ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sweet Bread Roll PBR
+    second: {fileID: 2100000, guid: 5486799a3107bcd40a86f0e163ea36a7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
