@@ -8,8 +8,10 @@ public class ColorButton : MonoBehaviour
 
     private void Start()
     {
+
+        color.a = 1f;
         GetComponent<Image>().color = color;
         GetComponent<Button>().onClick.AddListener(() => DrawingCanvas.ins.SetColor(color));
     }
-
 }
+   

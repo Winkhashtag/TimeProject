@@ -19,6 +19,7 @@ public class DrawingCanvas : MonoBehaviour
     private bool isDrawing = false;
     private List<Texture2D> savedDrawings = new List<Texture2D>();
 
+    private Vector2? lastDrawPos = null;
 
     public bool IsOpen()
     {
@@ -45,14 +46,21 @@ public class DrawingCanvas : MonoBehaviour
         drawingPanel.SetActive(false);
     }
 
-    void NewCanvas()
+    // Change 'void NewCanvas()' to 'public void NewCanvas()'
+    public void NewCanvas()
     {
         drawTexture = new Texture2D(textureWidth, textureHeight);
+
+        Color[] pixels = new Color[textureWidth * textureHeight];
+        for (int i = 0; i < pixels.Length; i++)
+        {
+            pixels[i] = Color.white;
+        }
+        drawTexture.SetPixels(pixels);
         drawTexture.Apply();
         canvasImage.texture = drawTexture;
     }
 
-    private Vector2? lastDrawPos = null;
 
     private void Update()
     {
