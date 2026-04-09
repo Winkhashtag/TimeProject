@@ -27,7 +27,7 @@ public class MousePOV : MonoBehaviour
         {
             StatReplenisher replenisher = GameManager.ins.currentNode != null ? GameManager.ins.currentNode.GetComponent<StatReplenisher>() : null;
 
-            if (GameManager.ins.ivCanvas.gameObject.activeInHierarchy || GameManager.ins.obsCamera.gameObject.activeInHierarchy || GameManager.ins.calendarCanvas.gameObject.activeInHierarchy || (replenisher != null && replenisher.isActive))
+            if (GameManager.ins.ivCanvas.gameObject.activeInHierarchy || GameManager.ins.obsCamera.gameObject.activeInHierarchy || GameManager.ins.calendarCanvas.gameObject.activeInHierarchy || (replenisher != null && replenisher.isActive || GameManager.ins.drawingCanvas.IsOpen()))
             {
                 return;
 

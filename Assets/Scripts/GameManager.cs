@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public IVCanvas ivCanvas;
     public ObsCamera obsCamera;
     public CalendarCanvas calendarCanvas;
+    public DrawingCanvas drawingCanvas;
 
     [HideInInspector]
     public Node currentNode;
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
         ivCanvas.gameObject.SetActive(false);
         obsCamera.gameObject.SetActive(false);
         calendarCanvas.gameObject.SetActive(false);
+        drawingCanvas.Close();
     }
 
     private void Start()
@@ -63,6 +65,12 @@ startingNode.Arrive();
             if (currentNode.GetComponent<Prop>() != null && currentNode.GetComponent<Prop>().loc != null)
             {
                 currentNode.GetComponent<Prop>().loc.Arrive();
+            }
+
+            if (GameManager.ins.drawingCanvas.IsOpen())
+            {
+                drawingCanvas.Close();
+                return;
             }
         }
     }

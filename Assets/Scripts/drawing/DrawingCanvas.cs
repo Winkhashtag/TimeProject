@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 public class DrawingCanvas : MonoBehaviour
 {
     public static DrawingCanvas ins;
@@ -18,6 +19,12 @@ public class DrawingCanvas : MonoBehaviour
     private bool isDrawing = false;
     private List<Texture2D> savedDrawings = new List<Texture2D>();
 
+
+    public bool IsOpen()
+    {
+        return drawingPanel.activeInHierarchy;
+    }
+
     private void Awake()
     {
         ins = this;
@@ -26,7 +33,11 @@ public class DrawingCanvas : MonoBehaviour
     public void Open()
     {
         drawingPanel.SetActive(true);
-        NewCanvas();
+
+        if (drawTexture == null)
+        {
+            NewCanvas();
+        }
     }
 
     public void Close()
@@ -37,42 +48,50 @@ public class DrawingCanvas : MonoBehaviour
     void NewCanvas()
     {
         drawTexture = new Texture2D(textureWidth, textureHeight);
-
-        Color[] pixels = new Color[textureWidth * textureHeight];
-        for (int i = 0; i < pixels.Length; i++)
-        {
-            pixels[i] = Color.white;
-        }
-        drawTexture.SetPixels(pixels);
         drawTexture.Apply();
         canvasImage.texture = drawTexture;
     }
 
+    private Vector2? lastDrawPos = null;
+
     private void Update()
     {
-        if (!drawingPanel.activeSelf)
-            return;
+        if (!drawingPanel.activeSelf) return;
 
         if (Input.GetMouseButton(0))
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                PointerEventData eventData = new PointerEventData(EventSystem.current);
+                eventData.position = Input.mousePosition;
+                List<RaycastResult> results = new List<RaycastResult>();
+                EventSystem.current.RaycastAll(eventData, results);
+
+                foreach (var result in results)
+                {
+                    if (result.gameObject != canvasImage.gameObject)
+                        return;
+                }
+            }
+
             Vector2 localPoint;
             RectTransform rt = canvasImage.rectTransform;
 
             if (RectTransformUtility.ScreenPointToLocalPointInRectangle(rt, Input.mousePosition, null, out localPoint))
             {
-                float normalizedX = (localPoint.x * rt.rect.width / 2) / rt.rect.width;
-                float normalizedY = (localPoint.y * rt.rect.height / 2) / rt.rect.height;
-                
-                if (normalizedX >=0 && normalizedX <= 1 && normalizedY >= 0 && normalizedY <= 1)
+                float normalizedX = (localPoint.x / rt.rect.width) + 0.5f;
+                float normalizedY = (localPoint.y / rt.rect.height) + 0.5f;
+
+                if (normalizedX >= 0 && normalizedX <= 1 && normalizedY >= 0 && normalizedY <= 1)
                 {
                     int x = (int)(normalizedX * textureWidth);
                     int y = (int)(normalizedY * textureHeight);
-                    Draw(x,y);
+                    Draw(x, y);
+                    drawTexture.Apply();
                 }
             }
         }
     }
-
     void Draw(int x, int y)
     {
         int size = (int)brushSize;
@@ -80,15 +99,14 @@ public class DrawingCanvas : MonoBehaviour
         {
             for(int j = -size; j <= size; j++)
             {
-                if (i* i* j * j <= size * size)
+                if (i * i + j * j <= size * size)
                 {
-                    int px = Mathf.Clamp(x * i, 0, textureWidth - 1);
-                    int py = Mathf.Clamp(y * i, 0, textureHeight - 1);
-                    drawTexture.SetPixel(px,py, brushColor);
+                    int px = Mathf.Clamp(x + i, 0, textureWidth - 1);
+                int py = Mathf.Clamp(y + j, 0, textureHeight - 1);
+                drawTexture.SetPixel(px,py, brushColor);
                 }
             }
         }
-        drawTexture.Apply();
     }
 
     public void SetColor(Color color)
@@ -113,5 +131,10 @@ public class DrawingCanvas : MonoBehaviour
     public List<Texture2D> GetSavedDrawings()
     {
         return savedDrawings;
+    }
+
+    public void SetBrushSize(float size)
+    {
+        brushSize = size;
     }
 }

@@ -1,13 +1,15 @@
+using NUnit.Framework;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
-using NUnit.Framework;
 public class GalleryCanvas : MonoBehaviour
 {
     public static GalleryCanvas ins;
 
     public RawImage galleryImage;
     public GameObject galleryPanel;
+    public GameObject statsCanvas;
     public float displayDuration = 3f;
 
     private void Awake()
@@ -21,6 +23,7 @@ public class GalleryCanvas : MonoBehaviour
     {
         galleryPanel.SetActive(true);
         StartCoroutine(DisplayDrawings());
+        statsCanvas.SetActive(false);
     }
 
     IEnumerator<WaitForSeconds> DisplayDrawings()
