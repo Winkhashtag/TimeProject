@@ -46,7 +46,6 @@ public class DrawingCanvas : MonoBehaviour
         drawingPanel.SetActive(false);
     }
 
-    // Change 'void NewCanvas()' to 'public void NewCanvas()'
     public void NewCanvas()
     {
         drawTexture = new Texture2D(textureWidth, textureHeight);
@@ -64,31 +63,32 @@ public class DrawingCanvas : MonoBehaviour
 
     private void Update()
     {
-        if (!drawingPanel.activeSelf) return;
+        if (!drawingPanel.activeSelf)
+            return;
 
         if (Input.GetMouseButton(0))
         {
             if (EventSystem.current.IsPointerOverGameObject())
             {
-                PointerEventData eventData = new PointerEventData(EventSystem.current);
-                eventData.position = Input.mousePosition;
-                List<RaycastResult> results = new List<RaycastResult>();
-                EventSystem.current.RaycastAll(eventData, results);
+                Vector2 localPoint;
+                RectTransform rt = canvasImage.rectTransform;
+                if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(rt, Input.mousePosition, null, out localPoint))
+                    return;
 
-                foreach (var result in results)
-                {
-                    if (result.gameObject != canvasImage.gameObject)
-                        return;
-                }
+                float normalizedX = (localPoint.x + rt.rect.width / 2) / rt.rect.width;
+                float normalizedY = (localPoint.y + rt.rect.height / 2) / rt.rect.height;
+
+                if (normalizedX < 0 || normalizedX > 1 || normalizedY < 0 || normalizedY > 1)
+                    return;
             }
 
-            Vector2 localPoint;
-            RectTransform rt = canvasImage.rectTransform;
+            Vector2 point;
+            RectTransform rect = canvasImage.rectTransform;
 
-            if (RectTransformUtility.ScreenPointToLocalPointInRectangle(rt, Input.mousePosition, null, out localPoint))
+            if (RectTransformUtility.ScreenPointToLocalPointInRectangle(rect, Input.mousePosition, null, out point))
             {
-                float normalizedX = (localPoint.x / rt.rect.width) + 0.5f;
-                float normalizedY = (localPoint.y / rt.rect.height) + 0.5f;
+                float normalizedX = (point.x + rect.rect.width / 2) / rect.rect.width;
+                float normalizedY = (point.y + rect.rect.height / 2) / rect.rect.height;
 
                 if (normalizedX >= 0 && normalizedX <= 1 && normalizedY >= 0 && normalizedY <= 1)
                 {
