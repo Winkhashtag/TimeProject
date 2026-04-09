@@ -56,9 +56,11 @@ public class PlayerStats : MonoBehaviour
 
     public void Update()
     {
+        if (GalleryCanvas.ins.IsOpen())
+            return;
+
         DecayStats();
     }
-
     void DecayStats()
     {
         hunger = Mathf.Max(0, hunger - hungerDecayRate * Time.deltaTime);
