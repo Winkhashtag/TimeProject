@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 public class StatReplenisher : Interactable
 {
     [Header("Settings")]
     public string statName;
-    public float repenishAmount = 50f;
+    public float replenishAmount = 50f;
     public float holdDuration = 3f;
     public KeyCode holdKey = KeyCode.E;
 
@@ -15,6 +16,10 @@ public class StatReplenisher : Interactable
     private float holdTimer = 0f;
     private bool isHolding = false;
     public bool isActive = false;
+
+    [Header("Audio Settings")]
+    public AudioSource audioSource;
+    public AudioClip replenishSound;
 
     public override void Interact()
     {
@@ -48,7 +53,13 @@ public class StatReplenisher : Interactable
 
     void CompleteReplenish()
     {
-        PlayerStats.ins.ReplenishStat(statName, repenishAmount);
+        PlayerStats.ins.ReplenishStat(statName, replenishAmount);
+   
+        if (audioSource != null && replenishSound != null)
+        {
+            audioSource.PlayOneShot(replenishSound);
+        }
+
         holdTimer = 0f;
         holdFillImage.fillAmount = 0f;
         isActive = false;
@@ -64,5 +75,7 @@ public class StatReplenisher : Interactable
         buttonIcon.SetActive(false);
         this.enabled = false;
     }
+
+
 
 }
