@@ -3623,7 +3623,8 @@ MonoBehaviour:
   startingNode: {fileID: 1613214297}
   rig: {fileID: 1550082333}
   gameOverPanel: {fileID: 1783673338}
-  gameOverMessage: I hope this was enough.
+  gameOverMessage: When I think of you, fond connections flood my head. I hope you
+    are proud.
   gameOverText: {fileID: 1417396877}
 --- !u!4 &275666301
 Transform:
@@ -16696,7 +16697,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000061035, y: 35.642}
+  m_AnchoredPosition: {x: -120, y: 35.642}
   m_SizeDelta: {x: 185.4723, y: 71.2835}
   m_Pivot: {x: 0.49999982, y: 0.49999997}
 --- !u!114 &1417396877
@@ -16785,7 +16786,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -0.07470703, w: 0}
+  m_margin: {x: -141.57538, y: 0, z: -373.1549, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

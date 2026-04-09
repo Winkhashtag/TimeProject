@@ -1538,141 +1538,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1036407, y: 1, z: 0.9999999}
   m_Center: {x: -0.4549243, y: 0, z: 0.00000006247572}
---- !u!1 &105603718
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 105603723}
-  - component: {fileID: 105603722}
-  - component: {fileID: 105603721}
-  - component: {fileID: 105603720}
-  - component: {fileID: 105603719}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &105603719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105603718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d69e5ea471df9854b8938a4a91a60c65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
-  hunger: 100
-  maxHunger: 100
-  hungerDecayRate: 1
-  hungerBar: {fileID: 0}
-  sleep: 100
-  maxSleep: 100
-  sleepDecayRate: 0.5
-  sleepBar: {fileID: 0}
-  hygiene: 100
-  maxHygiene: 100
-  hygieneDecayRate: 0.5
-  hygieneBar: {fileID: 0}
-  bladder: 100
-  maxBladder: 100
-  bladderDecayRate: 1
-  bladderBar: {fileID: 0}
-  happy: 100
-  maxHappy: 100
-  happyDecayRate: 1
-  happyBar: {fileID: 0}
-  social: 100
-  maxSocial: 100
-  socialDecayRate: 1
-  socialBar: {fileID: 0}
---- !u!114 &105603720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105603718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c45f6a4ad35cd14b9be4f735b3d30a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DayManager
-  currentDay: 1
-  endingDay: 10
-  calendarTextures:
-  - {fileID: 2800000, guid: b9bbcf41724e1e845aa0cec398a7f96c, type: 3}
-  - {fileID: 2800000, guid: fc38a4c85bcd93a4580daf4e506b29a4, type: 3}
-  - {fileID: 2800000, guid: b40563aa2fbe06b4899d9c9d3f861c42, type: 3}
-  - {fileID: 2800000, guid: cdb313452e525104993f5f0d48b33c1b, type: 3}
-  - {fileID: 2800000, guid: 70fd3f82b4e60ce4db8fa887cd464960, type: 3}
-  - {fileID: 2800000, guid: 47f122d6602382547b95a1cec744d1cc, type: 3}
-  - {fileID: 2800000, guid: 069bc254d7d801f4680b708cbd79fe62, type: 3}
-  - {fileID: 2800000, guid: e0c8b9060c03e6042a42c3f8178450ba, type: 3}
-  - {fileID: 2800000, guid: 157e84ce41afd2e418027ead24a6247f, type: 3}
-  - {fileID: 2800000, guid: 131010c57e2b37e4d9d561092cf3cd87, type: 3}
---- !u!114 &105603721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105603718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1296d101631ab45458967c6d85c27bd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LightingManager
-  directionalLight: {fileID: 1396837924}
-  preset: {fileID: 11400000, guid: fc29bba6584c3044e9e86267283fae37, type: 2}
-  dayDuration: 60
-  timeOfDay: 3
---- !u!114 &105603722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105603718}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db9eb18557643b047add5626f8730e1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  ivCanvas: {fileID: 0}
-  obsCamera: {fileID: 0}
-  calendarCanvas: {fileID: 0}
-  drawingCanvas: {fileID: 0}
-  galleryCanvas: {fileID: 0}
-  currentNode: {fileID: 0}
-  startingNode: {fileID: 0}
-  rig: {fileID: 0}
-  gameOverPanel: {fileID: 0}
-  gameOverMessage: I hope this was enough.
-  gameOverText: {fileID: 0}
---- !u!4 &105603723
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105603718}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03076, y: 1.12488, z: 1.96161}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &109436561
 GameObject:
   m_ObjectHideFlags: 0
@@ -17683,7 +17548,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752080317}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44bb104bb007a18479c816be68967012, type: 3}
   m_Name: 
@@ -20281,7 +20146,6 @@ MeshFilter:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 105603723}
   - {fileID: 264099692}
   - {fileID: 1110544541}
   - {fileID: 83719926}
