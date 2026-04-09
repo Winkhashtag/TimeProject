@@ -1,9 +1,11 @@
 using System;
 using UnityEngine;
+using System.Collections;
 
 public class PlayerStats : MonoBehaviour
 {
     public static PlayerStats ins;
+    private bool isGameOver = false;
 
     [Header("Hunger")]
     public float hunger = 100f;
@@ -73,6 +75,8 @@ public class PlayerStats : MonoBehaviour
 
     void CheckPunishment()
     {
+        if (isGameOver) return;
+
         if (hunger <= 0)
             Punish("Hunger");
         if (sleep <= 0)
@@ -91,6 +95,8 @@ public class PlayerStats : MonoBehaviour
     void Punish(string statName)
     {
         Debug.Log(statName + " had reached 0 - punishment triggered");
+        isGameOver = true;
+        StartCoroutine(GameOver());
     }
 
     public void ReplenishStat(string statName, float amount)
@@ -127,5 +133,17 @@ public class PlayerStats : MonoBehaviour
         bladderBar.UpdateStatsBar(bladder, maxBladder, "Bladder");
         happyBar.UpdateStatsBar(happy, maxHappy, "Happy");
         socialBar.UpdateStatsBar(social, maxSocial, "Social");
+    }
+
+    IEnumerator GameOver()
+    {
+        GameManager.ins.ShowGameOver();
+        yield return new WaitForSeconds(5f);
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 }

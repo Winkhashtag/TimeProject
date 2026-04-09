@@ -38,6 +38,8 @@ public class MousePOV : MonoBehaviour
                 LookRotation();
             
         }
+        if (GameManager.ins.galleryCanvas.IsOpen())
+            return;
     }
     public void LookRotation()
     {

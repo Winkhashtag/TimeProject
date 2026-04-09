@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public ObsCamera obsCamera;
     public CalendarCanvas calendarCanvas;
     public DrawingCanvas drawingCanvas;
+    public GalleryCanvas galleryCanvas;
 
     [HideInInspector]
     public Node currentNode;
@@ -18,6 +19,12 @@ public class GameManager : MonoBehaviour
     public Node startingNode;
 
     public CameraRig rig;
+
+    public GameObject gameOverPanel;
+    public string gameOverMessage = "I hope this was enough.";
+    public TMPro.TMP_Text gameOverText;
+
+
     //bad singleton
     void Awake()
     {
@@ -73,5 +80,11 @@ startingNode.Arrive();
                 return;
             }
         }
+    }
+
+    public void ShowGameOver()
+    {
+        gameOverPanel.SetActive(true);
+        gameOverText.text = gameOverMessage;
     }
 }
