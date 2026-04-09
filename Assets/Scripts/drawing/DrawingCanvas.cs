@@ -21,6 +21,11 @@ public class DrawingCanvas : MonoBehaviour
 
     private Vector2? lastDrawPos = null;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip submitSound;
+    public float volume = 0.5f;
+
     public bool IsOpen()
     {
         return drawingPanel.activeInHierarchy;
@@ -132,6 +137,12 @@ public class DrawingCanvas : MonoBehaviour
         savedDrawings.Add(savedCopy);
 
         PlayerStats.ins.ReplenishStat("Happy", 50f);
+
+        if (audioSource != null && submitSound != null)
+        {
+            audioSource.PlayOneShot(submitSound, volume);
+        }
+
 
         Close();
     }

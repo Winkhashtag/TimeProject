@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.53444123, g: 0.45797443, b: 0.33957365, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.02
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.83339024, g: 0.7262502, b: 0.5059566, a: 1}
@@ -1368,6 +1368,9 @@ MonoBehaviour:
   brushColor: {r: 0, g: 0, b: 0, a: 1}
   drawingPanel: {fileID: 40363034}
   colorPreview: {fileID: 2054965252}
+  audioSource: {fileID: 1529595633}
+  submitSound: {fileID: 8300000, guid: 4d5e8ddaf0ca3d846a42bf8fd54deb23, type: 3}
+  volume: 0.5
 --- !u!1 &136715889
 GameObject:
   m_ObjectHideFlags: 0
@@ -3332,8 +3335,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256959759}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.12772499, y: -0.8027792, z: 0.1661126, w: -0.55824584}
-  m_LocalPosition: {x: -0.14713311, y: 0.19789302, z: 0.13473564}
+  m_LocalRotation: {x: 0.13925707, y: 0.68775433, z: -0.12333678, w: 0.7017047}
+  m_LocalPosition: {x: -0.19375968, y: 0.17111039, z: -0.06920713}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3776,6 +3779,22 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: afedab28e8a72e04baa4cdc8ba7130a4, type: 2}
+    - target: {fileID: -3457261109002982104, guid: 5286fa9a4ecccef449e234533764c4da, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9852655
+      objectReference: {fileID: 0}
+    - target: {fileID: -3457261109002982104, guid: 5286fa9a4ecccef449e234533764c4da, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3457261109002982104, guid: 5286fa9a4ecccef449e234533764c4da, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.17103194
+      objectReference: {fileID: 0}
+    - target: {fileID: -3457261109002982104, guid: 5286fa9a4ecccef449e234533764c4da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -19.696
+      objectReference: {fileID: 0}
     - target: {fileID: -3360749892484698651, guid: 5286fa9a4ecccef449e234533764c4da, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -9163,7 +9182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
+  m_Color: {r: 0.5166429, g: 0.8113208, b: 0.7588977, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13260,8 +13279,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093532160}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.11033064, y: -0.76438594, z: 0.11924789, w: -0.6239561}
-  m_LocalPosition: {x: -0.15765738, y: 0.27202678, z: 0.11974341}
+  m_LocalRotation: {x: 0.15525755, y: 0.6494535, z: -0.12488414, w: 0.7338319}
+  m_LocalPosition: {x: -0.30043197, y: 0.3906889, z: -0.05091566}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18899,7 +18918,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.35
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -19887,7 +19906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5037015022081538649, guid: 6c7a2a8a5ceb1b24d895569a8605a3f5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.93148774
+      value: 0.970345
       objectReference: {fileID: 0}
     - target: {fileID: -5037015022081538649, guid: 6c7a2a8a5ceb1b24d895569a8605a3f5, type: 3}
       propertyPath: m_LocalRotation.x
@@ -19895,7 +19914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5037015022081538649, guid: 6c7a2a8a5ceb1b24d895569a8605a3f5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.3637728
+      value: -0.24172409
       objectReference: {fileID: 0}
     - target: {fileID: -5037015022081538649, guid: 6c7a2a8a5ceb1b24d895569a8605a3f5, type: 3}
       propertyPath: m_LocalRotation.z
@@ -19903,7 +19922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5037015022081538649, guid: 6c7a2a8a5ceb1b24d895569a8605a3f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -42.664
+      value: -27.977
       objectReference: {fileID: 0}
     - target: {fileID: 527719858765939385, guid: 6c7a2a8a5ceb1b24d895569a8605a3f5, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -28275,7 +28294,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2121444548
